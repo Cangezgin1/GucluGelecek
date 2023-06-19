@@ -14,6 +14,7 @@ namespace BusinessLayer.Abstract
         void Update(Job job);
 
         Job GetById(int id);
+        Job GetByEmployerId(int id);
         List<Job> GetAll();
     }
 }

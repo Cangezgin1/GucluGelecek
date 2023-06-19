@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccsesLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,36 +11,37 @@ namespace BusinessLayer.Concrete
 {
     public class JobApplicationManager : IJobApplicationService
     {
-        private readonly IJobApplicationService _jobApplicationService;
+        IJobApplicationDal _jobApplicationDal;
 
-        public JobApplicationManager(IJobApplicationService jobApplicationService)
+        
+        public JobApplicationManager(IJobApplicationDal jobApplicationDal)
         {
-            _jobApplicationService = jobApplicationService;
+            _jobApplicationDal = jobApplicationDal;
         }
 
         public void Create(JobApplication jobApplication)
         {
-            _jobApplicationService.Create(jobApplication);
+            _jobApplicationDal.Insert(jobApplication);
         }
 
         public void Delete(JobApplication jobApplication)
         {
-            _jobApplicationService.Delete(jobApplication);
+            _jobApplicationDal.Delete(jobApplication);
         }
 
         public List<JobApplication> GetAll()
         {
-            return _jobApplicationService.GetAll(); 
+            return _jobApplicationDal.List(); 
         }
 
         public JobApplication GetById(int id)
         {
-            return _jobApplicationService.GetById(id);
+            return _jobApplicationDal.Get(x=>x.JobApplicationID==id);
         }
 
         public void Update(JobApplication jobApplication)
         {
-            _jobApplicationService.Update(jobApplication);
+            _jobApplicationDal.Update(jobApplication);
         }
     }
 }

@@ -18,6 +18,6 @@ namespace EntityLayer.Concrete
         public string City { get; set; }
         public string Password { get; set; }
 
-        public ICollection<JobApplication> Applications { get; set; }
+        public ICollection<JobApplication> JobApplications { get; set; }
     }
 }

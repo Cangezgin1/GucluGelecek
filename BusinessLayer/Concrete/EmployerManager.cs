@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccsesLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,36 +11,37 @@ namespace BusinessLayer.Concrete
 {
     public class EmployerManager : IEmployerService
     {
-        private readonly IEmployerService _employerService;
+        IEmployerDal _employerDal;
 
-        public EmployerManager(IEmployerService employerService)
+       
+        public EmployerManager(IEmployerDal employerDal)
         {
-            _employerService = employerService;
+            _employerDal = employerDal;
         }
 
         public void Create(Employer employer)
         {
-            _employerService.Create(employer);
+            _employerDal.Insert(employer);
         }
 
         public void Delete(Employer employer)
         {
-            _employerService.Delete(employer);  
+            _employerDal.Delete(employer);  
         }
 
         public List<Employer> GetAll()
         {
-            return _employerService.GetAll();   
+            return _employerDal.List();   
         }
 
         public Employer GetById(int id)
         {
-            return _employerService.GetById(id);    
+            return _employerDal.Get(x=>x.EmployerID==id);    
         }
 
         public void Update(Employer employer)
         {
-            _employerService.Update(employer);  
+            _employerDal.Update(employer);  
         }
     }
 }

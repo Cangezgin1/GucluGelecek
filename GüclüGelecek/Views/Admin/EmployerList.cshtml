@@ -1,0 +1,43 @@
+﻿@using EntityLayer.Concrete
+@model List<Employer>
+
+@{
+    ViewData["Title"] = "EmployerList";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<h1>İş Verenler Listesi</h1>
+
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>İş Veren İsim</th>
+        <th>Şirket İsmi</th>
+        <th>E-mail</th>
+        <th>TelefonNo</th>
+        <th>Şehir</th>
+        <th>Şifre</th>
+        <th>Yayınladığı İşler</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.EmployerID</th>
+            <td>@item.Name</td>
+            <td>@item.CompanyName</td>
+            <td>@item.Email</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.City</td>
+            <td>@item.Password</td>
+            <td><a href="/Admin/EmployerDetails/@item.EmployerID">@item.Jobs.Count()</a></td>
+            <th><a href="#" class="btn btn-danger">Sil</a></th>
+            <th><a href="#" class="btn btn-warning">Güncelle</a></th>
+        </tr>
+    }
+</table>

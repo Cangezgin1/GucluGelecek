@@ -23,8 +23,8 @@ namespace GüclüGelecek.Controllers
             var adminControl = loginManager.GetAdmin(admin.Username, admin.Password);
 
             if (adminControl != null)
-                return RedirectToAction("", "");
-            else
+                return RedirectToAction("JobList", "Admin");
+            else 
                 return View();
         }
 

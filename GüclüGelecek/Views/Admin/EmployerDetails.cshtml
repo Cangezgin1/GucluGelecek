@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@model Employer
+
+@{
+    ViewData["Title"] = "Employer Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="text-align:center">İş Veren Detayları</h2>
+
+
+<div class="container">
+    <div style="font-size:large;color:black" class="list-group">
+        <a class="list-group-item">
+            <p class="list-group-item-text"><b>İş Veren İsim:</b> @Model.Name</p>
+        </a>
+        <a class="list-group-item">
+            <p class="list-group-item-text"><b>Şirket İsmi:</b> @Model.CompanyName</p>
+        </a>
+        <a class="list-group-item">
+            <p class="list-group-item-text"><b>E-mail:</b> @Model.Email</p>
+        </a>
+        <a class="list-group-item">
+            <p class="list-group-item-text"><b>TelefonNo:</b> @Model.PhoneNumber</p>
+        </a>
+        <a class="list-group-item">
+            <p class="list-group-item-text"><b>Şehir:</b> @Model.City</p>
+        </a>
+        <a class="list-group-item">
+            <p class="list-group-item-text"><b>Şifre:</b> @Model.Password</p>
+        </a>
+    </div>
+</div>
+
+<br />
+
+<h3 style="text-align:center">Yayınladığı İşler</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>İş Başlığı</th>
+        <th>İş Açıklaması</th>
+        <th>Kategori</th>
+    </tr>
+
+    @foreach (var job in Model.Jobs)
+    {
+        <tr>
+            <th>@job.JobID</th>
+            <td>@job.JobTitle</td>
+            <td>@job.JobDescription</td>
+            <td>@job.Category.CategoryName</td>
+        </tr>
+    }
+</table>
