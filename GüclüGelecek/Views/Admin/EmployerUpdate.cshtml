@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Employer
+
+@{
+    ViewData["Title"] = "EmployerUpdate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>İş Veren Güncelleme Sayfası</h1>
+
+@using (Html.BeginForm("EmployerUpdate", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.EmployerID, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.Password, new { @class = "form-control" })
+        <br />
+        @Html.Label("İsim:")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        @Html.Label("Şirket İsmi:")
+        @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Mail Adresi:")
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        <br />
+        @Html.Label("Telefon Numarası:")
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+        <br />
+        @Html.Label("Şehir:")
+        @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Değişiklikleri Kaydet</button>
+    </div>
+}

@@ -4,6 +4,7 @@ using DataAccsesLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccsesLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230620102116_mig_AddJobSeekerAge-Experience-University")]
+    partial class mig_AddJobSeekerAgeExperienceUniversity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,7 +42,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasKey("AdminID");
 
-                    b.ToTable("Admins", (string)null);
+                    b.ToTable("Admins");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
@@ -57,7 +59,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Employer", b =>
@@ -95,7 +97,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasKey("EmployerID");
 
-                    b.ToTable("Employers", (string)null);
+                    b.ToTable("Employers");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
@@ -120,16 +122,13 @@ namespace DataAccsesLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
                     b.HasKey("JobID");
 
                     b.HasIndex("CategoryID");
 
                     b.HasIndex("EmployerID");
 
-                    b.ToTable("Jobs", (string)null);
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.JobApplication", b =>
@@ -155,7 +154,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasIndex("JobSeekerID");
 
-                    b.ToTable("JobApplications", (string)null);
+                    b.ToTable("JobApplications");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.JobSeeker", b =>
@@ -207,7 +206,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasKey("JobSeekerID");
 
-                    b.ToTable("JobSeekers", (string)null);
+                    b.ToTable("JobSeekers");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>

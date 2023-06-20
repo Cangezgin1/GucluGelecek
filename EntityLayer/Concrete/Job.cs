@@ -14,6 +14,10 @@ namespace EntityLayer.Concrete
         public int JobID { get; set; }
         public string JobTitle { get; set; }
         public string JobDescription { get; set; }
+        public bool Status { get; set; } = true; // Varsayılan değer true.
+
+        [NotMapped] // Veritabanına yansımaması için sadece geçici hesaplamalar için..
+        public int ApplicationCount { get; set; }
 
         [ForeignKey("Employer")]
         public int EmployerID { get; set; }

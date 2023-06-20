@@ -3,10 +3,10 @@
 
 @{
     ViewData["Title"] = "JobList";
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    Layout = "~/Views/Shared/EmployerLayout.cshtml";
 }
 
-<h1>İlandaki İşler</h1>
+<h1>Yayınladığım İş İlanları</h1>
 
 <br />
 <br />
@@ -15,7 +15,7 @@
         <th>#</th>
         <th>İş Başlığı</th>
         <th>İş Açıklaması</th>
-        <th>İş Veren Firma</th>
+        <th>Firma İsmi</th>
         <th>Kategori</th>
         <th>Statü</th>
         <th>Başvuru Sayısı</th>
@@ -31,10 +31,10 @@
             <td>@item.JobDescription</td>
             <td>@item.Employer.CompanyName</td>
             <td>@item.Category.CategoryName</td>
-            <td>@item.Status</td>
-            <th><a href="/Admin/JobApplicationListDetails/@item.JobID">@item.ApplicationCount</a></th>
-            <th><a href="/Admin/JobDelete/@item.JobID" class="btn btn-danger">Sil</a></th>
-            <th><a href="/Admin/JobUpdate/@item.JobID" class="btn btn-warning">Güncelle</a></th>
+            <th>@item.Status</th>
+            <th><a href="#">@item.ApplicationCount</a></th>
+            <th><a href="/Employer/JobDelete/@item.JobID" class="btn btn-danger">Kaldır</a></th>
+            <th><a href="/Employer/JobUpdate/@item.JobID" class="btn btn-warning">Güncelle</a></th>
         </tr>
     }
 </table>

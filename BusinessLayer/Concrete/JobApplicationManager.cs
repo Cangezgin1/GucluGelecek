@@ -36,7 +36,7 @@ namespace BusinessLayer.Concrete
 
         public JobApplication GetById(int id)
         {
-            return _jobApplicationDal.Get(x=>x.JobApplicationID==id);
+            return _jobApplicationDal.Get(x=>x.JobID==id);
         }
 
         public void Update(JobApplication jobApplication)

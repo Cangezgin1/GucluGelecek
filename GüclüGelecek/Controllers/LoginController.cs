@@ -29,23 +29,35 @@ namespace GüclüGelecek.Controllers
         }
 
 
+
+
+        [HttpGet]
+        public IActionResult EmployerLogin()
+        {
+            return View();
+        }
+        [HttpPost]
         public IActionResult EmployerLogin(Employer employer)
         {
-            var adminControl = loginManager.GetEmployer(employer.Email, employer.Password);    
+            var employerControl = loginManager.GetEmployer(employer.Email, employer.Password);
 
-            if (adminControl != null)
-                return RedirectToAction("", "");
+            if (employerControl != null)
+            {
+                HttpContext.Session.SetInt32("EmployerID", employerControl.EmployerID);
+                return RedirectToAction("JobList", "Employer");
+            }
             else
                 return View();
         }
 
 
 
+
         public IActionResult JobSeekerLogin(JobSeeker jobSeeker)
         {
-            var adminControl = loginManager.GetJobSeeker(jobSeeker.Email, jobSeeker.Password);
+            var jobSeekerControl = loginManager.GetJobSeeker(jobSeeker.Email, jobSeeker.Password);
 
-            if (adminControl != null)
+            if (jobSeekerControl != null)
                 return RedirectToAction("", "");
             else
                 return View();

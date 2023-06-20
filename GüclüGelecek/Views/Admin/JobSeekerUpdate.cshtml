@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Concrete.JobSeeker
+
+@{
+    ViewData["Title"] = "JobSeekerUpdate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>İş Arayan Güncelleme Sayfası</h1>
+
+@using (Html.BeginForm("JobSeekerUpdate", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.JobSeekerID, new { @class = "form-control" })
+        <br />
+        @Html.Label("İsim:")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        @Html.Label("Soyisim:")
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        <br />
+        @Html.Label("Title:")
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yaş:")
+        @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
+        <br />
+        @Html.Label("Tecrübe:")
+        @Html.TextBoxFor(x => x.Experience, new { @class = "form-control" })
+        <br />
+        @Html.Label("Üniversite:")
+        @Html.TextBoxFor(x => x.University, new { @class = "form-control" })
+        <br />
+        @Html.Label("Mail Adresi:")
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        <br />
+        @Html.Label("Telefon Numarası:")
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+        <br />
+        @Html.Label("Şehir:")
+        @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(x => x.Password, new { @class = "form-control" })
+        <button class="btn btn-success">Değişiklikleri Kaydet</button>
+    </div>
+}

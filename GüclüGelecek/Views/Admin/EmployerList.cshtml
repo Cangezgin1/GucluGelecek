@@ -36,8 +36,8 @@
             <td>@item.City</td>
             <td>@item.Password</td>
             <td><a href="/Admin/EmployerDetails/@item.EmployerID">@item.Jobs.Count()</a></td>
-            <th><a href="#" class="btn btn-danger">Sil</a></th>
-            <th><a href="#" class="btn btn-warning">Güncelle</a></th>
+            <th><a href="/Admin/EmployerDelete/@item.EmployerID" class="btn btn-danger">Sil</a></th>
+            <th><a href="/Admin/EmployerUpdate/@item.EmployerID" class="btn btn-warning">Güncelle</a></th>
         </tr>
     }
 </table>
