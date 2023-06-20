@@ -33,7 +33,16 @@
             <td>@item.Category.CategoryName</td>
             <th>@item.Status</th>
             <th><a href="#">@item.ApplicationCount</a></th>
-            <th><a href="/Employer/JobDelete/@item.JobID" class="btn btn-danger">Kaldır</a></th>
+            <th>
+                @if (item.Status == true)
+                {
+                    <a style="width:95px;height:50px;font-size:small;" href="/Employer/JobDelete/@item.JobID" class="btn btn-danger">Kaldır</a>
+                }
+                else
+                {
+                    <a style="width:95px;height:50px;" href="/Employer/JobActive/@item.JobID" class="btn btn-success">Yayına Al</a>
+                }
+            </th>
             <th><a href="/Employer/JobUpdate/@item.JobID" class="btn btn-warning">Güncelle</a></th>
         </tr>
     }

@@ -57,6 +57,14 @@ namespace GüclüGelecek.Controllers
             return RedirectToAction("JobList","Employer");
         }
 
+        public IActionResult JobActive(int id)
+        {
+            var job = jobManager.GetById(id);
+            job.Status = true;
+            jobManager.Update(job);
+            return RedirectToAction("JobList", "Employer");
+        }
+
         [HttpGet]
         public IActionResult JobUpdate(int id)
         {
