@@ -54,7 +54,7 @@ namespace GüclüGelecek.Controllers
             var job = jobManager.GetById(id);
             job.Status = false;
             jobManager.Update(job);
-            return RedirectToAction("JobList","Employer");
+            return RedirectToAction("JobList", "Employer");
         }
 
         public IActionResult JobActive(int id)
@@ -74,12 +74,17 @@ namespace GüclüGelecek.Controllers
                 .Where(x => x.JobID == id)
                 .FirstOrDefault();
 
-            List<SelectListItem> ViewEmployer = (from x in employerManager.GetAll()
-                                                 select new SelectListItem
-                                                 {
-                                                     Value = x.EmployerID.ToString(),
-                                                     Text = x.Name.ToString()
-                                                 }).ToList();
+            var sessionid = Convert.ToInt32(HttpContext.Session.GetInt32("EmployerID"));
+            var employer = employerManager.GetById(sessionid);
+
+            List<SelectListItem> ViewEmployer = new List<SelectListItem>
+            {
+                new SelectListItem
+                {
+                    Value = employer.EmployerID.ToString(),
+                    Text = employer.Name.ToString()
+                }
+            };
 
             List<SelectListItem> ViewCategory = (from x in categoryManager.GetAll()
                                                  select new SelectListItem
@@ -101,7 +106,66 @@ namespace GüclüGelecek.Controllers
         }
 
 
+        public IActionResult JobApplicationListDetails(int id)
+        {
+            var jobApplications = context.JobApplications
+            .Include(a => a.JobSeeker)
+            .Where(x => x.JobID == id)
+            .ToList();
+
+            return View(jobApplications);
+        }
+
         #endregion
 
+
+        #region İş Yayınlama
+
+        [HttpGet]
+        public IActionResult AddJob()
+        {
+            var sessionid = Convert.ToInt32(HttpContext.Session.GetInt32("EmployerID"));
+            var employer = employerManager.GetById(sessionid);
+
+            List<SelectListItem> ViewEmployer = new List<SelectListItem>
+            {
+                new SelectListItem
+                {
+                    Value = employer.EmployerID.ToString(),
+                    Text = employer.Name.ToString()
+                }
+            };
+
+            List<SelectListItem> ViewCategory = (from x in categoryManager.GetAll()
+                                                 select new SelectListItem
+                                                 {
+                                                     Value = x.CategoryID.ToString(),
+                                                     Text = x.CategoryName.ToString()
+                                                 }).ToList();
+
+            ViewBag.employer = ViewEmployer;
+            ViewBag.category = ViewCategory;
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddJob(Job job)
+        {
+            jobManager.Create(job);
+            return RedirectToAction("JobList", "Employer");
+        }
+
+        #endregion
+
+
+        #region İş Arayanlar
+
+        public IActionResult JobSeekerList()
+        {
+            var jobSeeker = jobseekerManager.GetAll();
+            return View(jobSeeker);
+        }
+
+        #endregion
     }
 }

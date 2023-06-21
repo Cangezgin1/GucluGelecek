@@ -40,7 +40,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasKey("AdminID");
 
-                    b.ToTable("Admins", (string)null);
+                    b.ToTable("Admins");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
@@ -57,7 +57,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Employer", b =>
@@ -69,6 +69,10 @@ namespace DataAccsesLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployerID"), 1L, 1);
 
                     b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CompanyLogo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -95,7 +99,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasKey("EmployerID");
 
-                    b.ToTable("Employers", (string)null);
+                    b.ToTable("Employers");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>
@@ -129,7 +133,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasIndex("EmployerID");
 
-                    b.ToTable("Jobs", (string)null);
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.JobApplication", b =>
@@ -155,7 +159,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasIndex("JobSeekerID");
 
-                    b.ToTable("JobApplications", (string)null);
+                    b.ToTable("JobApplications");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.JobSeeker", b =>
@@ -207,7 +211,7 @@ namespace DataAccsesLayer.Migrations
 
                     b.HasKey("JobSeekerID");
 
-                    b.ToTable("JobSeekers", (string)null);
+                    b.ToTable("JobSeekers");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Job", b =>

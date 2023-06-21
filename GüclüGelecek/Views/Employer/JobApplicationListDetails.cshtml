@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<JobApplication>
+
+@{
+    ViewData["Title"] = "JobApplicationListDetails";
+    Layout = "~/Views/Shared/EmployerLayout.cshtml";
+}
+
+
+<h1 style="font-weight:bold;">İş başvurusu yapanlar</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başuranın Adı</th>
+        <th>Başlık</th>
+        <th>Tecrübe</th>
+        <th>Mail Adresi</th>
+        <th>Telefon Numarası</th>
+        <th>Başvuru Tarihi</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.JobSeeker.JobSeekerID</th>
+            <td>@item.JobSeeker.Name @item.JobSeeker.Surname</td>
+            <td>@item.JobSeeker.Title</td>
+            <td>@item.JobSeeker.Experience</td>
+            <td>@item.JobSeeker.Email</td>
+            <td>@item.JobSeeker.PhoneNumber</td>
+            <td>@item.ApplicationDate.ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>

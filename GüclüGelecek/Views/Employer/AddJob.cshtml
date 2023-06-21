@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Job
+
+@{
+    ViewData["Title"] = "AddJob";
+    Layout = "~/Views/Shared/EmployerLayout.cshtml";
+}
+
+
+<h1 style="font-weight:bold;">İş Yayınlama Sayfası</h1>
+
+@using (Html.BeginForm("AddJob", "Employer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.JobID, new { @class = "form-control" })
+        <br />
+        <p>İş Başlığı:</p>
+        @Html.TextBoxFor(x => x.JobTitle, new { @class = "form-control" })
+        <br />
+        <p>İş Açıklaması:</p>
+        @Html.TextBoxFor(x => x.JobDescription, new { @class = "form-control" })
+        <br />
+        <p>Statü:</p>
+        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+        <br />
+        <p>İşi Yayınlayan:</p>
+        @Html.DropDownListFor(x => x.EmployerID, (List<SelectListItem>)ViewBag.employer, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kategori:")
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.category, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Kategori Ekle</button>
+    </div>
+}

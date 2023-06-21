@@ -29,7 +29,7 @@
                   </div>
                   <p>CT</p>
                 </a>-->
-                <a style="font-size:x-large" href="https://www.creative-tim.com" class="simple-text logo-normal">
+                <a style="font-size:x-large;font-weight:bold;" href="#" class="simple-text logo-normal">
                     GÜCLÜ GELECEK
                 </a>
             </div>
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/Employer/CreateJob/">
+                        <a href="/Employer/AddJob/">
                             <i class="nc-icon nc-badge"></i>
                             <p style="font-size:large;">İş Yayınla</p>
                         </a>
@@ -70,7 +70,7 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="javascript:;">İş Veren Paneli</a>
+                        <a style="font-weight:bold;" class="navbar-brand" href="javascript:;">İş Veren Paneli</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -126,5 +126,6 @@
     <script src="~/Dashboard/assets/js/plugins/chartjs.min.js"></script>
     <script src="~/Dashboard/assets/js/plugins/bootstrap-notify.js"></script>
     <script src="~/Dashboard/assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
+    @RenderSection("scripts",required:false);
 </body>
 </html>

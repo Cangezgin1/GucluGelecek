@@ -26,7 +26,7 @@ namespace GüclüGelecek.Controllers
         #endregion
 
 
-        #region Job CRUD
+        #region Job 
 
         public IActionResult JobList()
         {
@@ -55,7 +55,6 @@ namespace GüclüGelecek.Controllers
 
             return View(jobApplications);
         }
-
 
         [HttpGet]
         public IActionResult JobUpdate(int id)
@@ -95,42 +94,24 @@ namespace GüclüGelecek.Controllers
         public IActionResult JobDelete(int id)
         {
             var job = jobManager.GetById(id);
-            jobManager.Delete(job);
-            return RedirectToAction("JobList");
+            job.Status = false;
+            jobManager.Update(job);
+            return RedirectToAction("JobList", "Admin");
         }
 
-        //[HttpGet]
-        //public IActionResult JobAdd()
-        //{
-        //    List<SelectListItem> ViewEmployer = (from x in employerManager.GetAll()
-        //                                         select new SelectListItem
-        //                                         {
-        //                                             Value = x.EmployerID.ToString(),
-        //                                             Text = x.Name.ToString()
-        //                                         }).ToList();
+        public IActionResult JobActive(int id)
+        {
+            var job = jobManager.GetById(id);
+            job.Status = true;
+            jobManager.Update(job);
+            return RedirectToAction("JobList", "Admin");
+        }
 
-        //    List<SelectListItem> ViewCategory = (from x in categoryManager.GetAll()
-        //                                         select new SelectListItem
-        //                                         {
-        //                                             Value = x.CategoryID.ToString(),
-        //                                             Text = x.CategoryName.ToString()
-        //                                         }).ToList();
-
-        //    ViewBag.employer = ViewEmployer;
-        //    ViewBag.category = ViewCategory;
-        //    return View();
-        //}
-        //[HttpPost]
-        //public IActionResult JobAdd(Job job)
-        //{
-        //    jobManager.Create(job);
-        //    return RedirectToAction("JobList");
-        //}
 
         #endregion
 
 
-        #region Employer CRUD
+        #region Employer 
 
         public IActionResult EmployerList()
         {
@@ -171,7 +152,7 @@ namespace GüclüGelecek.Controllers
         #endregion 
 
 
-        #region JobSeeker CRUD
+        #region JobSeeker 
 
         public IActionResult JobSeekerList()
         {
@@ -202,7 +183,7 @@ namespace GüclüGelecek.Controllers
         #endregion
 
 
-        #region Category CRUD
+        #region Category 
 
         public IActionResult CategoryList()
         {

@@ -1,0 +1,131 @@
+﻿@using EntityLayer.Concrete
+@model List<JobSeeker>
+
+@{
+    ViewData["Title"] = "JobSeekerList";
+    Layout = "~/Views/Shared/EmployerLayout.cshtml";
+    int counter = 1;
+}
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('th.sortable').click(function () {
+                var column = $(this).data('column');
+                var dataType = $(this).data('type');
+
+                sortTable(column, dataType);
+            });
+
+            $('#titleFilter').on('input', function () {
+                filterByTitle($(this).val());
+            });
+
+            $('#experienceFilter').change(function () {
+                filterByExperience($(this).val());
+            });
+        });
+
+        function sortTable(column, dataType) {
+            var tbody = $('table.sortable tbody');
+            var rows = tbody.find('tr').toArray();
+
+            rows.sort(function (a, b) {
+                var aValue = $(a).find('td:eq(' + column + ')').text();
+                var bValue = $(b).find('td:eq(' + column + ')').text();
+
+                if (dataType === 'number') {
+                    return parseFloat(aValue) - parseFloat(bValue);
+                } else {
+                    return aValue.localeCompare(bValue);
+                }
+            });
+
+            tbody.empty().append(rows);
+        }
+
+        function filterByTitle(filterValue) {
+            var tbody = $('table.sortable tbody');
+            var rows = tbody.find('tr').toArray();
+
+            rows.forEach(function (row) {
+                var title = $(row).find('td:eq(3)').text();
+
+                if (title.toLowerCase().includes(filterValue.toLowerCase())) {
+                    $(row).show();
+                } else {
+                    $(row).hide();
+                }
+            });
+        }
+
+        function filterByExperience(filterValue) {
+            var tbody = $('table.sortable tbody');
+            var rows = tbody.find('tr').toArray();
+
+            rows.forEach(function (row) {
+                var experience = parseInt($(row).find('td:eq(5)').text());
+                var range = filterValue.split('-');
+                var minExperience = parseInt(range[0]);
+                var maxExperience = parseInt(range[1]);
+
+                if (filterValue === "" || (experience >= minExperience && experience <= maxExperience)) {
+                    $(row).show();
+                } else {
+                    $(row).hide();
+                }
+            });
+        }
+    </script>
+}
+
+<h1 style="font-weight:bold;">İş Arayan Listesi</h1>
+
+<div class="filter-controls">
+    <label style="font-size:medium;font-weight:bold;" for="titleFilter">Başlık Filtresi:</label>
+    <input type="text" id="titleFilter" class="form-control" />
+    <br />
+    <label style="font-size:medium;font-weight:bold;" for="experienceFilter">Tecrübe Filtresi:</label>
+    <select id="experienceFilter" class="form-control">
+        <option value="">Tümü</option>
+        <option value="0-2">0-2 Yıl</option>
+        <option value="3-5">3-5 Yıl</option>
+        <option value="6-10">6-10 Yıl</option>
+        <option value="11-">11+ Yıl</option>
+    </select>
+</div>
+<br />
+<table class="table table-bordered sortable">
+    <thead>
+        <tr>
+            <th href="#" class="sortable" data-column="0" data-type="number">#</th>
+            <th href="#" class="sortable" data-column="1" data-type="string">İsim</th>
+            <th href="#" class="sortable" data-column="2" data-type="string">Soyisim</th>
+            <th href="#" class="sortable" data-column="3" data-type="string">Başlık</th>
+            <th href="#" class="sortable" data-column="4" data-type="number">Yaş</th>
+            <th href="#" class="sortable" data-column="5" data-type="number">Tecrübe</th>
+            <th href="#" class="sortable" data-column="6" data-type="string">Üniversite</th>
+            <th href="#" class="sortable" data-column="7" data-type="string">Email</th>
+            <th href="#" class="sortable" data-column="8" data-type="string">TelefonNo</th>
+            <th href="#" class="sortable" data-column="9" data-type="string">Şehir</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@counter</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.Title</td>
+                <td>@item.Age</td>
+                <td>@item.Experience</td>
+                <td>@item.University</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.City</td>
+            </tr>
+            counter++;
+        }
+    </tbody>
+</table>

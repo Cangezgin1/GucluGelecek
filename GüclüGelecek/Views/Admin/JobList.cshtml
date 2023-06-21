@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>İlandaki İşler</h1>
+<h1 style="font-weight:bold;">İlandaki İşler</h1>
 
 <br />
 <br />
@@ -33,7 +33,16 @@
             <td>@item.Category.CategoryName</td>
             <td>@item.Status</td>
             <th><a href="/Admin/JobApplicationListDetails/@item.JobID">@item.ApplicationCount</a></th>
-            <th><a href="/Admin/JobDelete/@item.JobID" class="btn btn-danger">Sil</a></th>
+            <th>
+                @if (item.Status == true)
+                {
+                    <a style="width:95px;height:50px;font-size:small;" href="/Admin/JobDelete/@item.JobID" class="btn btn-danger">Kaldır</a>
+                }
+                else
+                {
+                    <a style="width:95px;height:50px;" href="/Admin/JobActive/@item.JobID" class="btn btn-success">Yayına Al</a>
+                }
+            </th>
             <th><a href="/Admin/JobUpdate/@item.JobID" class="btn btn-warning">Güncelle</a></th>
         </tr>
     }

@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>İş Güncelleme Sayfası</h1>
+<h1 style="font-weight:bold;">İş Yayınlama Sayfası</h1>
 
 @using (Html.BeginForm("JobUpdate", "Admin", FormMethod.Post))
 {
@@ -28,6 +28,6 @@
     @Html.Label("Statü:")
     @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
     <br />
-    <button class="btn btn-success">Değişiklikleri Kaydet</button>
+    <button class="btn btn-success">İşi Yayınla</button>
 </div>
 }

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h1>İş Veren Güncelleme Sayfası</h1>
+<h1 style="font-weight:bold;">İş Veren Güncelleme Sayfası</h1>
 
 @using (Html.BeginForm("EmployerUpdate", "Admin", FormMethod.Post))
 {
@@ -19,6 +19,9 @@
         @Html.Label("Şirket İsmi:")
         @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
         <br />
+        @Html.Label("Şirket logosu:")
+        @Html.TextBoxFor(x => x.CompanyLogo, new { @class = "form-control" })
+        <br>
         @Html.Label("Mail Adresi:")
         @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
         <br />
@@ -31,3 +34,4 @@
         <button class="btn btn-success">Değişiklikleri Kaydet</button>
     </div>
 }
+

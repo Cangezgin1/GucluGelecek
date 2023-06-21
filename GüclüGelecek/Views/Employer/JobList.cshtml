@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/EmployerLayout.cshtml";
 }
 
-<h1>Yayınladığım İş İlanları</h1>
+<h1 style="font-weight:bold;">Yayınladığım İş İlanları</h1>
 
 <br />
 <br />
@@ -32,7 +32,7 @@
             <td>@item.Employer.CompanyName</td>
             <td>@item.Category.CategoryName</td>
             <th>@item.Status</th>
-            <th><a href="#">@item.ApplicationCount</a></th>
+            <th><a href="/Employer/JobApplicationListDetails/@item.JobID">@item.ApplicationCount</a></th>
             <th>
                 @if (item.Status == true)
                 {
