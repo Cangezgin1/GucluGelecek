@@ -13,10 +13,12 @@ namespace GüclüGelecek.Controllers
 {
     public class HomeController : Controller
     {
+        Context context = new Context();
 
         public IActionResult Index()
         {
-            return View();
+            var values = context.Jobs.Include(x=>x.Employer).ToList();
+            return View(values);
         }
 
         public IActionResult About()
