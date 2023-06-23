@@ -9,7 +9,7 @@ namespace GüclüGelecek.Controllers
             return View();
         }
         public IActionResult Employer()
-        {
+        { 
             return View();
         }
     }
