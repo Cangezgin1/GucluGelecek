@@ -13,7 +13,7 @@ namespace GüclüGelecek.Controllers
 {
     public class AdminController : Controller
     {
-        Context context = new Context();
+        Context context = new Context(); 
 
         #region Managers
 
