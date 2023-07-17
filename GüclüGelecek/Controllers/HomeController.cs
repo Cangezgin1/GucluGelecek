@@ -13,7 +13,7 @@ namespace GüclüGelecek.Controllers
 {
     public class HomeController : Controller
     {
-        Context context = new Context();
+        Context context = new Context(); 
 
         public IActionResult Index()
         {
