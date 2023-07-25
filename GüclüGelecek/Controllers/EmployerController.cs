@@ -15,7 +15,7 @@ namespace GüclüGelecek.Controllers
     {
         Context context = new Context();
 
-        #region Managers
+        #region Managers 
 
         JobManager jobManager = new JobManager(new EfJobDal());
         EmployerManager employerManager = new EmployerManager(new EfEmployerDal());
