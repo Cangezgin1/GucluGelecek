@@ -1,6 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccsesLayer.Abstract;
-using DataAccsesLayer.Concrete;
+using DataAccsesLayer.Concrete; 
 using DataAccsesLayer.EntityFramework;
 using EntityLayer.Concrete;
 using GüclüGelecek.Models;
