@@ -29,7 +29,7 @@ namespace GüclüGelecek.Controllers
         }
 
 
-
+ 
 
         [HttpGet]
         public IActionResult EmployerLogin()
