@@ -8,7 +8,7 @@ using GüclüGelecek.Models;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
-
+ 
 namespace GüclüGelecek.Controllers 
 {
     public class HomeController : Controller
