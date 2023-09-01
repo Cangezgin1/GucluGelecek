@@ -96,7 +96,7 @@ namespace GüclüGelecek.Controllers
             ViewBag.employer = ViewEmployer;
             ViewBag.category = ViewCategory;
 
-            return View(job);
+            return View(job); 
         }
         [HttpPost]
         public IActionResult JobUpdate(Job job)
