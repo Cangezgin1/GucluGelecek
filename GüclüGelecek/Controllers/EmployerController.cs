@@ -61,7 +61,7 @@ namespace GüclüGelecek.Controllers
         {
             var job = jobManager.GetById(id);
             job.Status = true;
-            jobManager.Update(job);
+            jobManager.Update(job); 
             return RedirectToAction("JobList", "Employer");
         }
 
