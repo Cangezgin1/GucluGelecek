@@ -19,7 +19,7 @@ namespace GüclüGelecek.Controllers
 
         JobManager jobManager = new JobManager(new EfJobDal());
         EmployerManager employerManager = new EmployerManager(new EfEmployerDal());
-        JobSeekerManager jobseekerManager = new JobSeekerManager(new EfJobSeekerDal());
+        JobSeekerManager jobseekerManager = new JobSeekerManager(new EfJobSeekerDal()); 
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         JobApplicationManager jobApplicationManager = new JobApplicationManager(new EfJobApplicationDal());
 
