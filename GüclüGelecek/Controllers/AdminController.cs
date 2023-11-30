@@ -24,7 +24,7 @@ namespace GüclüGelecek.Controllers
         JobApplicationManager jobApplicationManager = new JobApplicationManager(new EfJobApplicationDal());
 
         #endregion
-
+ 
 
         #region Job 
 
