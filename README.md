@@ -11,3 +11,5 @@ Toplamda 3 panelli olacaktır.( İş veren, İş arayan ve Admin )
 <img width="750" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/2037418e-e6c5-4da0-95f3-558bf38c14c5">
 <img width="750" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/99066a3c-cf83-46de-8359-cbfdfc5fc527">
 <img width="750" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/3d75b150-a0b6-4a80-865b-d56f69cb69bb">
+<img width="819" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/80617747-7658-47a5-b388-49a8f9bb5b9c">
+<img width="814" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/e65cf6a9-5474-44d6-8ab9-c083c0903853">
