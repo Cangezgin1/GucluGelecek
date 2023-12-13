@@ -3,7 +3,7 @@
 Şahsi olarak Depremden etkilenen İnsanlar için Kariyet.Net tarzı iş bulma sitesi şuanda Veritabanı tasarımı yapıldı, Katmanlar oluşturuldu, Repository Design Pattern oluşturuldu, Business ve DataAccses Katmanları tamamlandı, AdminPaneli ve İşVeren Panelleri tamamlandı, şu anda İşArayan Paneli tamamlanıyor.
 Toplamda 3 panelli olacaktır.( İş veren, İş arayan ve Admin )
 
-<h3>Visual Srudio;</h3>
+<h3>Visual Studio;</h3>
 <img width="750" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/50003b16-ae75-471b-be12-49692a91f4f1">
 <h3>Pictures from the project;</h3>
 <img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/f5311baf-66c9-4620-9da6-4d4874e90031">
