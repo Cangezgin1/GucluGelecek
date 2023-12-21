@@ -1,7 +1,27 @@
 # GüclüGelecek
 
-Şahsi olarak Depremden etkilenen İnsanlar için Kariyet.Net tarzı iş bulma sitesi şuanda Veritabanı tasarımı yapıldı, Katmanlar oluşturuldu, Repository Design Pattern oluşturuldu, Business ve DataAccses Katmanları tamamlandı, AdminPaneli ve İşVeren Panelleri tamamlandı, şu anda İşArayan Paneli tamamlanıyor.
-Toplamda 3 panelli olacaktır.( İş veren, İş arayan ve Admin )
+<h2>Projede kullanılan teknolojiler</h2>
+* Katmanlı Mimari
+* Entity Layer
+* DataAccess Layer
+* Business Layer
+* UI Layer
+----------
+* .Net Core 6.0
+* SQL Server
+* MVC
+* Entity Framework Code First
+* Repository Design Pattern
+* Bootstrap
+* CSS
+* HTML
+* N Tier Architecture
+* Fluent Validation
+* Migration
+
+<p>GüçlüGelecek, kariyer.net sitesine benzer iş başvuru sitesidir. Admin, İş veren ve İş arayan olmak üzere 3 tane ayrı ayrı panel bulunmaktadır ve bununla beraber bir Dashboard bulunmaktadır.</br>Projeye ait resimleri aşağıda bulabilirsiniz, şu anda yapım aşaması devam etmektedir projenin son hali yüklenecektir.</p>
+
+Ekran Görüntüleri
 
 <h3>Visual Studio;</h3>
 <img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/2c9b0cf0-eaaa-4787-bdca-afc26699a5db">
