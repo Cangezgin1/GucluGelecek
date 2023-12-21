@@ -1,23 +1,22 @@
 # GüclüGelecek
 
 <h2>Projede kullanılan teknolojiler</h2>
-* Katmanlı Mimari
-* Entity Layer
-* DataAccess Layer
-* Business Layer
-* UI Layer
-----------
-* .Net Core 6.0
-* SQL Server
-* MVC
-* Entity Framework Code First
-* Repository Design Pattern
-* Bootstrap
-* CSS
-* HTML
-* N Tier Architecture
-* Fluent Validation
-* Migration
+<ul>
+  <li>Katmanlı Mimari</li>
+  <li>Entity Layer</li>
+  <li>DataAccess Layer</li>
+  <li>Business Layer</li>
+  <li>UI Layer</li>
+  <li>.Net Core 6.0</li>
+  <li>MVC</li>
+  <li>Entity Framework Code First</li>
+  <li>Repository Design Pattern</li>
+  <li>Html, CSS</li>
+  <li>N Tier Architecture</li>
+  <li>Fluent Validation</li>
+  <li>Migration</li>
+</ul>
+
 
 <p>GüçlüGelecek, kariyer.net sitesine benzer iş başvuru sitesidir. Admin, İş veren ve İş arayan olmak üzere 3 tane ayrı ayrı panel bulunmaktadır ve bununla beraber bir Dashboard bulunmaktadır.</br>Projeye ait resimleri aşağıda bulabilirsiniz, şu anda yapım aşaması devam etmektedir projenin son hali yüklenecektir.</p>
 
