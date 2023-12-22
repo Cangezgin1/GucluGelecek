@@ -43,7 +43,7 @@ namespace GüclüGelecek.Controllers
                 job.ApplicationCount = applicationCount;
             }
 
-            return View(jobList);
+            return View(jobList); 
         }
 
         public IActionResult JobApplicationListDetails(int id)
