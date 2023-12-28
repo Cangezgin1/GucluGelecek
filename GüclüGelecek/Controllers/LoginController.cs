@@ -13,8 +13,8 @@ namespace GüclüGelecek.Controllers
 
         #region Managers
 
-        LoginManager loginManager = new LoginManager(new EfAdminDal(),new EfEmployerDal(),new EfJobSeekerDal());
-
+        LoginManager loginManager = new LoginManager(new EfAdminDal(),new EfEmployerDal(),new EfJobSeekerDal()); 
+ 
         #endregion
 
 
