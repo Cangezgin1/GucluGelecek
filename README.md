@@ -29,6 +29,6 @@ Ekran Görüntüleri
 <img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/2037418e-e6c5-4da0-95f3-558bf38c14c5">
 <img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/99066a3c-cf83-46de-8359-cbfdfc5fc527">
 <img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/3d75b150-a0b6-4a80-865b-d56f69cb69bb">
-<img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/80617747-7658-47a5-b388-49a8f9bb5b9c">
+<img width="800" alt="Adsız" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/66a34dca-bc39-475b-abbd-ebb576ca21cf">
 <img width="800" alt="Adsız" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/0a266c8f-e4d7-4a09-ad06-87a537de916c">
 <img width="800" alt="Adsız1" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/92f4bd5e-d71b-4399-97b4-f34bdc96f94d">
