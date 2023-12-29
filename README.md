@@ -23,7 +23,7 @@
 Ekran Görüntüleri
 
 <h3>Visual Studio;</h3>
-<img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/2c9b0cf0-eaaa-4787-bdca-afc26699a5db">
+<img width="800" alt="Adsız" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/66b2ce86-33a4-4df2-bec1-97c0f43c4163">
 <h3>Pictures from the project;</h3>
 <img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/f5311baf-66c9-4620-9da6-4d4874e90031">
 <img width="800" alt="image" src="https://github.com/Cangezgin1/GucluGelecek/assets/93928479/2037418e-e6c5-4da0-95f3-558bf38c14c5">
